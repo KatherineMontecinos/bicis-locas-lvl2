@@ -1,18 +1,32 @@
 function validateForm(){
-	var inputname = document.getElementById("name").value;
+	/*var inputname = document.getElementById("name").value;
    	var inputlastname = document.getElementById("lastname").value;
     var inputemail = document.getElementById("input-email").value;
     var inputpassword = document.getElementById("input-password").value;
-    var listabici = document.querySelector("select").value;
+    var listabici = document.querySelector("select").value;*/
+$(document).ready(function(){
+
+    var inputname = $("#name").attr("value");
+    var inputlastname = $("#lastname").attr("value");
+    var inputemail = $("#input-email").attr("value");
+    var inputpassword = $("#input-password").attr("value");
+    var listabici = $("select").val("value");
+    
 
     (function validateName(){
     	if( inputname == null || inputname.length == 0 || /^\s+$/.test(inputname) || /^[a-zA-Z]*$/.test(inputname) == false || inputname.charAt(0).toUpperCase() !== inputname.charAt(0) ) {
-			var contname = document.querySelector('.name-container');
+			/*var contname = document.querySelector('.name-container');
 			var span = document.createElement('span');
 			var alerta = document.createTextNode('Error! debe comenzar en mayuscula y usar solo letras'); 
 			span.appendChild(alerta);
 			contname.appendChild(span);
-			return false;
+			return false;*/
+
+            var contname = $(".name-container");
+            var mensaje = "Error! debe comenzar en mayuscula y usar solo letras"
+            var elementoNuevo = "<span>" + mensaje + "</span>"
+
+
 		}
     }) ();
 
